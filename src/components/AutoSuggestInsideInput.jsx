@@ -1,15 +1,5 @@
 import { useState, useEffect, createRef, forwardRef, memo } from "react";
 
-const suggestions = [
-  "abcde",
-  "applebcdefghijklmnopqrstuvwxyz",
-  "apple",
-  "ape",
-  "arrow",
-  "angel",
-  "archer",
-];
-
 const MemorizedInput = memo(
   forwardRef(({ displayValue, onChange }, inputRef) => {
     return <input ref={inputRef} value={displayValue} onChange={onChange} />;
@@ -17,7 +7,7 @@ const MemorizedInput = memo(
 );
 
 // TODO: set displayValue should be memorized
-function AutoSuggestInside({ displayValue, setDisplayValue }) {
+function AutoSuggestInside({ suggestions, displayValue, setDisplayValue }) {
   const inputRef = createRef();
   const [value, setValue] = useState("");
   const [prevValue, setPrevValue] = useState("");
@@ -46,7 +36,7 @@ function AutoSuggestInside({ displayValue, setDisplayValue }) {
 
     const suggested = value.length > 0 && suggestedPart ? suggestedPart : "";
     setDisplayValue(value + suggested);
-  }, [value, prevValue, inputRef, caretPosition, setDisplayValue]);
+  }, [suggestions, value, prevValue, inputRef, caretPosition, setDisplayValue]);
 
   useEffect(() => {
     if (displayValue.length < prevDisplayValue.length) {
