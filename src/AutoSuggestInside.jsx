@@ -16,7 +16,7 @@ const MemorizedInput = memo(
   })
 );
 
-function AutoSuggestInside2() {
+function AutoSuggestInside() {
   const inputRef = createRef();
   const [value, setValue] = useState("");
   const [prevValue, setPrevValue] = useState("");
@@ -76,4 +76,4 @@ function AutoSuggestInside2() {
   );
 }
 
-export default AutoSuggestInside2;
+export default AutoSuggestInside;
