@@ -1,7 +1,6 @@
 {
   "name": "react-autosuggest-inside-input",
   "version": "0.1.0",
-  "private": true,
   "main": "dist/AutoSuggestInsideInput.js",
   "module": "dist/AutoSuggestInsideInput.js",
   "files": [
