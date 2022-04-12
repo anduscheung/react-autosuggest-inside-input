@@ -21,6 +21,7 @@ function AutoSuggestInside2() {
   const [value, setValue] = useState("");
   const [prevValue, setPrevValue] = useState("");
   const [displayValue, setDisplayValue] = useState("");
+  const [prevDisplayValue, setPrevDisplayValue] = useState("");
   const [caretPosition, setCaretPosition] = useState(0);
 
   const onChange = (e) => {
@@ -29,6 +30,7 @@ function AutoSuggestInside2() {
     console.log("2.... caret position ==>>", inputRef.current.selectionEnd);
     setCaretPosition(inputRef.current.selectionEnd);
     setPrevValue(value);
+    setPrevDisplayValue(displayValue);
     setValue(e.target.value);
   };
 
@@ -52,19 +54,31 @@ function AutoSuggestInside2() {
   }, [value, prevValue, inputRef, caretPosition]);
 
   useEffect(() => {
-    if (value.length < prevValue.length) {
-      console.log("4....update caret position (delete)", value, prevValue);
+    console.log("4....", displayValue, prevDisplayValue);
+    if (displayValue.length < prevDisplayValue.length) {
+      console.log(
+        "4....update caret position (delete)",
+        value,
+        prevDisplayValue,
+        caretPosition,
+        caretPosition
+      );
       console.log("------");
       inputRef.current.setSelectionRange(caretPosition, caretPosition);
       return;
     }
-    console.log("4....update caret position (type)", value, prevValue);
+    console.log(
+      "4....update caret position (type)",
+      value,
+      prevDisplayValue,
+      value.length,
+      displayValue.length
+    );
     console.log("------");
     inputRef.current.focus();
     inputRef.current.setSelectionRange(value.length, displayValue.length);
     inputRef.current.scrollLeft = 0;
-    inputRef.current.focus();
-  }, [displayValue, value, prevValue, inputRef, caretPosition]);
+  }, [displayValue, value, prevDisplayValue, inputRef, caretPosition]);
 
   return (
     <div className="input_wrapper">
