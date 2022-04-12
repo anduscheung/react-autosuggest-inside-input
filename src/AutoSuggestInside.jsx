@@ -53,13 +53,6 @@ function AutoSuggestInside() {
       inputRef.current.setSelectionRange(caretPosition, caretPosition);
       return;
     }
-    console.log(
-      "4....update caret position (type)",
-      value,
-      prevDisplayValue,
-      value.length,
-      displayValue.length
-    );
     inputRef.current.focus();
     inputRef.current.setSelectionRange(value.length, displayValue.length);
     inputRef.current.scrollLeft = 0;
