@@ -1,12 +1,12 @@
 import "./App.css";
-import AutoSuggestInside from "./AutoSuggestInside";
+import AutoSuggestInsideInput from "./components/AutoSuggestInsideInput";
 import { useState } from "react";
 
 function App() {
   const [displayValue, setDisplayValue] = useState("");
   return (
     <div className="container">
-      <AutoSuggestInside
+      <AutoSuggestInsideInput
         displayValue={displayValue}
         setDisplayValue={setDisplayValue}
       />
