@@ -16,11 +16,11 @@ const MemorizedInput = memo(
   })
 );
 
-function AutoSuggestInside() {
+// TODO: set displayValue should be memorized
+function AutoSuggestInside({ displayValue, setDisplayValue }) {
   const inputRef = createRef();
   const [value, setValue] = useState("");
   const [prevValue, setPrevValue] = useState("");
-  const [displayValue, setDisplayValue] = useState("");
   const [prevDisplayValue, setPrevDisplayValue] = useState("");
   const [caretPosition, setCaretPosition] = useState(0);
 
@@ -46,7 +46,7 @@ function AutoSuggestInside() {
 
     const suggested = value.length > 0 && suggestedPart ? suggestedPart : "";
     setDisplayValue(value + suggested);
-  }, [value, prevValue, inputRef, caretPosition]);
+  }, [value, prevValue, inputRef, caretPosition, setDisplayValue]);
 
   useEffect(() => {
     if (displayValue.length < prevDisplayValue.length) {
