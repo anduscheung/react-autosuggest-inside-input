@@ -2,25 +2,16 @@ import "./App.css";
 import AutoSuggestInsideInput from "./components/AutoSuggestInsideInput";
 import { useState } from "react";
 
-const suggestions = [
-  "abcde",
-  "applebcdefghijklmnopqrstuvwxyz",
-  "apple",
-  "ape",
-  "arrow",
-  "angel",
-  "archer",
-  "www.google.com",
-];
+const suggestions = ["www.google.com", "www.github.com", "www.npmjs.com"];
 
 function App() {
-  const [displayValue, setDisplayValue] = useState("");
+  const [value, setValue] = useState("");
   return (
     <div className="container">
       <AutoSuggestInsideInput
         suggestions={suggestions}
-        displayValue={displayValue}
-        setDisplayValue={setDisplayValue}
+        value={value}
+        setValue={setValue}
       />
     </div>
   );

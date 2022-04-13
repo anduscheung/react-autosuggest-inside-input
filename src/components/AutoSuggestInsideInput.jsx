@@ -15,8 +15,8 @@ const MemorizedInput = memo(
 
 function AutoSuggestInputInside({
   suggestions,
-  displayValue,
-  setDisplayValue,
+  value: displayValue,
+  setValue: setDisplayValue,
   className = undefined,
 }) {
   const inputRef = createRef();
