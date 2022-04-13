@@ -26,15 +26,7 @@ Some component that you wish to enhance with click outside detection:
 import AutoSuggestInsideInput from "react-autosuggest-inside-input";
 import { useState } from "react";
 
-const suggestions = [
-  "abcde",
-  "applebcdefghijklmnopqrstuvwxyz",
-  "apple",
-  "ape",
-  "arrow",
-  "angel",
-  "archer",
-];
+const suggestions = ["www.google.com", "www.github.com", "www.npmjs.com"];
 function App() {
   const [displayValue, setDisplayValue] = useState("");
   return (

@@ -6,7 +6,6 @@ const MemorizedInput = memo(
   })
 );
 
-// TODO: set displayValue should be memorized
 function AutoSuggestInside({ suggestions, displayValue, setDisplayValue }) {
   const inputRef = createRef();
   const [value, setValue] = useState("");
