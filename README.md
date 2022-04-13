@@ -1,3 +1,50 @@
-# Publish tutorial reference
+# React Autosuggest Inside Input
 
-https://www.cluemediator.com/create-an-npm-package-using-create-react-app
+This is a React project that provide autosuggest feature inside an input component
+
+Currently it works as expected but still enhancing so please do not directly import it in your production projects because I will keep releasing changes.
+
+But feel free to take a look at the implementation :P.
+
+## Installation
+
+`yarn add react-autosuggest-inside-input`
+
+## Usage
+
+Installation:
+
+```
+npm install react-click-outside
+```
+
+Some component that you wish to enhance with click outside detection:
+
+```js
+import AutoSuggestInsideInput from "react-autosuggest-inside-input";
+import { useState } from "react";
+
+const suggestions = [
+  "abcde",
+  "applebcdefghijklmnopqrstuvwxyz",
+  "apple",
+  "ape",
+  "arrow",
+  "angel",
+  "archer",
+];
+function App() {
+  const [displayValue, setDisplayValue] = useState("");
+  return (
+    <AutoSuggestInsideInput
+      suggestions={suggestions}
+      displayValue={displayValue}
+      setDisplayValue={setDisplayValue}
+    />
+  );
+}
+```
+
+## License
+
+[MIT](http://moroshko.mit-license.org)
