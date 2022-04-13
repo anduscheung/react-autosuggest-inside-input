@@ -1,12 +1,24 @@
 import { useState, useEffect, createRef, forwardRef, memo } from "react";
 
 const MemorizedInput = memo(
-  forwardRef(({ displayValue, onChange }, inputRef) => {
-    return <input ref={inputRef} value={displayValue} onChange={onChange} />;
+  forwardRef(({ displayValue, onChange, className }, inputRef) => {
+    return (
+      <input
+        ref={inputRef}
+        value={displayValue}
+        onChange={onChange}
+        className={className}
+      />
+    );
   })
 );
 
-function AutoSuggestInside({ suggestions, displayValue, setDisplayValue }) {
+function AutoSuggestInputInside({
+  suggestions,
+  displayValue,
+  setDisplayValue,
+  className = undefined,
+}) {
   const inputRef = createRef();
   const [value, setValue] = useState("");
   const [prevValue, setPrevValue] = useState("");
@@ -48,14 +60,13 @@ function AutoSuggestInside({ suggestions, displayValue, setDisplayValue }) {
   }, [displayValue, value, prevDisplayValue, inputRef, caretPosition]);
 
   return (
-    <div className="input_wrapper">
-      <MemorizedInput
-        ref={inputRef}
-        displayValue={displayValue}
-        onChange={onChange}
-      />
-    </div>
+    <MemorizedInput
+      ref={inputRef}
+      className={className}
+      displayValue={displayValue}
+      onChange={onChange}
+    />
   );
 }
 
-export default AutoSuggestInside;
+export default AutoSuggestInputInside;
