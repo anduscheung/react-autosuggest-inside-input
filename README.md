@@ -1,6 +1,8 @@
 # React Autosuggest Inside Input
 
-This is a React project that provide autosuggest feature inside an input component
+This is a React project that provide autosuggest feature inside an input component like below.
+
+![Demo](https://github.com/anduscheung/react-autosuggest-inside-input/blob/main/src/assets/demo.gif)
 
 Currently it works as expected but still enhancing so please do not directly import it in your production projects because I will keep releasing changes.
 
