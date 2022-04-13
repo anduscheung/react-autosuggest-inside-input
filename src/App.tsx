@@ -10,6 +10,7 @@ const suggestions = [
   "arrow",
   "angel",
   "archer",
+  "www.google.com",
 ];
 
 function App() {
