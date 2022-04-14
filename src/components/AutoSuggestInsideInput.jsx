@@ -1,17 +1,4 @@
-import { useState, useEffect, createRef, forwardRef, memo } from "react";
-
-const MemorizedInput = memo(
-  forwardRef(({ displayValue, onChange, className }, inputRef) => {
-    return (
-      <input
-        ref={inputRef}
-        value={displayValue}
-        onChange={onChange}
-        className={className}
-      />
-    );
-  })
-);
+import { useEffect, createRef, useRef, useState } from "react";
 
 function AutoSuggestInputInside({
   suggestions,
@@ -19,52 +6,83 @@ function AutoSuggestInputInside({
   setValue: setDisplayValue,
   className = undefined,
 }) {
+  const value = useRef("");
+  const prevValue = useRef("");
+  const prevDisplayValue = useRef("");
+  const suggestionActive = useRef(false);
+
+  const [caret, setCaret] = useState([0, 0]);
+
   const inputRef = createRef();
-  const [value, setValue] = useState("");
-  const [prevValue, setPrevValue] = useState("");
-  const [prevDisplayValue, setPrevDisplayValue] = useState("");
-  const [caretPosition, setCaretPosition] = useState(0);
 
   const onChange = (e) => {
-    setCaretPosition(inputRef.current.selectionEnd);
-    setPrevValue(value);
-    setPrevDisplayValue(displayValue);
-    setValue(e.target.value);
-  };
-
-  useEffect(() => {
-    if (value.length < prevValue.length || value.length === prevValue.length) {
-      setDisplayValue(value);
-      return;
-    }
+    prevValue.current = value.current;
+    value.current = e.target.value;
 
     const suggestedWord =
-      value.length > 0 && suggestions.find((item) => item.startsWith(value));
+      value.current.length > 0 &&
+      suggestions.find((item) => item.startsWith(value.current));
 
     const suggestedPart = suggestedWord
-      ? suggestedWord.slice(value.length, suggestedWord.length)
+      ? suggestedWord.slice(value.current.length, suggestedWord.length)
       : null;
 
-    const suggested = value.length > 0 && suggestedPart ? suggestedPart : "";
-    setDisplayValue(value + suggested);
-  }, [suggestions, value, prevValue, inputRef, caretPosition, setDisplayValue]);
-
-  useEffect(() => {
-    if (displayValue.length < prevDisplayValue.length) {
-      inputRef.current.setSelectionRange(caretPosition, caretPosition);
-      return;
+    // delete
+    const deleteCase0 =
+      suggestionActive.current && e.target.value === prevValue.current;
+    const deleteCase1 = suggestionActive.current && !suggestedPart;
+    const deleteCase2 =
+      suggestionActive.current === false &&
+      value.current.length < prevValue.current.length;
+    if (deleteCase0 || deleteCase1 || deleteCase2) {
+      suggestionActive.current = false;
+      setDisplayValue(value.current);
+      setCaret([inputRef.current.selectionEnd, inputRef.current.selectionEnd]);
     }
-    inputRef.current.focus();
-    inputRef.current.setSelectionRange(value.length, displayValue.length);
-    inputRef.current.scrollLeft = 0;
-  }, [displayValue, value, prevDisplayValue, inputRef, caretPosition]);
+    // type
+    else {
+      prevDisplayValue.current = displayValue;
+
+      const suggested =
+        value.current.length > 0 && suggestedPart ? suggestedPart : "";
+      const newDisplayValue = value.current + suggested;
+
+      if (suggested) {
+        suggestionActive.current = true;
+      }
+
+      setCaret([value.current.length, newDisplayValue.length]);
+      setDisplayValue(newDisplayValue);
+    }
+  };
+
+  // set caret if there is suggestionActive
+  useEffect(() => {
+    console.log(
+      "suggestionActive.current =",
+      suggestionActive.current === false,
+      caret
+    );
+    if (suggestionActive.current === true) {
+      inputRef.current.setSelectionRange(caret[0], caret[1]);
+      // TODO: when it is too long
+      // inputRef.current.scrollLeft = 0;
+    }
+  }, [inputRef, caret]);
+
+  const onClick = () => {
+    suggestionActive.current = false;
+    value.current = displayValue;
+    prevDisplayValue.current = displayValue;
+  };
 
   return (
-    <MemorizedInput
+    <input
       ref={inputRef}
-      className={className}
-      displayValue={displayValue}
+      onClick={onClick}
+      value={displayValue}
       onChange={onChange}
+      className={className}
     />
   );
 }

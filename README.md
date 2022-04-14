@@ -1,6 +1,14 @@
 # ATTENTION!!
 
-This project is a practice project for me to explore npm packaging only and still under construction
+This project has not gone through the testing process.
+I published it early because I want to explore npm packaging only.
+Do not directly import it in your production projects because it might have bugs and I will keep releasing changes.
+But feel free to take a look at the implementation :P.
+
+Road map:
+
+- 100% test coverage
+- Typescript
 
 # React Autosuggest Inside Input
 
@@ -8,9 +16,7 @@ This is a React project that provide autosuggest feature inside an input compone
 
 ![Demo](https://github.com/anduscheung/react-autosuggest-inside-input/blob/main/src/assets/demo.gif)
 
-Currently this project is still work in process so please do not directly import it in your production projects because I will keep releasing changes.
-
-But feel free to take a look at the implementation :P.
+Currently this project might be buggy because I have not fully test it yet, but test cases and types are releasing soon.
 
 ## Installation
 
@@ -34,6 +40,8 @@ function App() {
   );
 }
 ```
+
+Add a `className` to style it if needed.
 
 ## License
 

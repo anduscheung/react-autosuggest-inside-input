@@ -1,11 +1,16 @@
 import "./App.css";
 import AutoSuggestInsideInput from "./components/AutoSuggestInsideInput";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
-const suggestions = ["www.google.com", "www.github.com", "www.npmjs.com"];
+const suggestions = ["w.g", "w.a", "w.c"];
 
 function App() {
   const [value, setValue] = useState("");
+
+  useCallback((newValue) => {
+    setValue(newValue);
+  }, []);
+
   return (
     <div className="container">
       <AutoSuggestInsideInput
