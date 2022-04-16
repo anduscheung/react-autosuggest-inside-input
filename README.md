@@ -29,6 +29,7 @@ npm install react-autosuggest-inside-input
 
 ````sh
 yarn add react-autosuggest-inside-input
+```
 
 ## Usage example
 
@@ -47,7 +48,7 @@ function App() {
     />
   );
 }
-````
+```
 
 ## Props
 
@@ -61,3 +62,4 @@ function App() {
 ## License
 
 [MIT](http://moroshko.mit-license.org)
+````
