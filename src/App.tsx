@@ -2,7 +2,12 @@ import "./App.css";
 import AutoSuggestInsideInput from "./components/AutoSuggestInsideInput";
 import { useCallback, useState } from "react";
 
-const suggestions = ["w.g", "w.a", "w.c"];
+const suggestions = [
+  "www.google.com",
+  "www.npmjs.com",
+  "www.github.com",
+  "www.abcdefghijklmnpoqrstuvwxyz.com",
+];
 
 function App() {
   const [value, setValue] = useState("");
