@@ -6,7 +6,7 @@ This is a React project that provide autosuggest feature inside an input compone
 
 # ATTENTION!!
 
-This package will work but the current version is still in beta, will keep releasing changes (full test cases and types will release soon.).
+This package will work (briefly tested with Cypress) but still in beta. Full test cases and types support will release soon.
 
 Please use it at your own risk.
 
