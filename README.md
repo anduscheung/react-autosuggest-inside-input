@@ -17,7 +17,18 @@ Road map:
 
 ## Installation
 
-`yarn add react-autosuggest-inside-input`
+To install, you can use [npm](https://npmjs.org/) or [yarn](https://yarnpkg.com):
+
+**npm**
+
+```sh
+npm install react-autosuggest-inside-input
+```
+
+**yarn**
+
+````sh
+yarn add react-autosuggest-inside-input
 
 ## Usage example
 
@@ -36,9 +47,16 @@ function App() {
     />
   );
 }
-```
+````
 
-Add a `className` to style it if needed.
+## Props
+
+| Name        | Type               | Optional | Description                                                                |
+| ----------- | ------------------ | -------- | -------------------------------------------------------------------------- |
+| suggestions | string array       | false    | List of suggestions, the input will show the the first match of this array |
+| value       | string             | false    | Input value                                                                |
+| setValue    | (newValue) => void | false    | Callback to set the value                                                  |
+| className   | String             | true     | Class name to style the input                                              |
 
 ## License
 
