@@ -83,11 +83,21 @@ function AutoSuggestInputInside({
     prevDisplayValue.current = displayValue;
   };
 
+  const onKeyDown = (e) => {
+    // left right key
+    if (e.keyCode === 37 || e.keyCode === 39) {
+      suggestionActive.current = false;
+      value.current = displayValue;
+      prevDisplayValue.current = displayValue;
+    }
+  };
+
   return (
     <input
       id="asi-input"
       ref={inputRef}
       onClick={onClick}
+      onKeyDown={onKeyDown}
       value={displayValue}
       onChange={onChange}
       className={className}
