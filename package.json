@@ -1,6 +1,6 @@
 {
   "name": "react-autosuggest-inside-input",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "main": "dist/AutoSuggestInsideInput.js",
   "module": "dist/AutoSuggestInsideInput.js",
   "homepage": "https://github.com/anduscheung/react-autosuggest-inside-input",

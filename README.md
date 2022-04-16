@@ -1,22 +1,19 @@
-# ATTENTION!!
-
-This project has not gone through the testing process.
-I published it early because I want to explore npm packaging only.
-Do not directly import it in your production projects because it might have bugs and I will keep releasing changes.
-But feel free to take a look at the implementation :P.
-
-Road map:
-
-- 100% test coverage
-- Typescript
-
 # React Autosuggest Inside Input
 
 This is a React project that provide autosuggest feature inside an input component like below.
 
 ![Demo](https://github.com/anduscheung/react-autosuggest-inside-input/blob/main/src/assets/demo.gif)
 
-Currently this project might be buggy because I have not fully test it yet, but test cases and types are releasing soon.
+# ATTENTION!!
+
+This package will work but the current version is still in beta, will keep releasing changes (full test cases and types will release soon.).
+
+Please use it at your own risk.
+
+Road map:
+
+- 100% test coverage
+- Typescript
 
 ## Installation
 
