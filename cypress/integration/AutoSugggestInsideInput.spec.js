@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-describe("My First Test", () => {
+describe("Test AutoSuggestInsideInput component", () => {
   it("search with one chars", () => {
     cy.visit("localhost:3000");
     cy.get("#asi-input").type("w");
