@@ -1,6 +1,6 @@
 {
   "name": "react-autosuggest-inside-input",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "main": "dist/AutoSuggestInsideInput.js",
   "module": "dist/AutoSuggestInsideInput.js",
   "homepage": "https://github.com/anduscheung/react-autosuggest-inside-input",
@@ -34,12 +34,23 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "prepublish": "rm -rf dist && mkdir dist && babel ./src/components -d dist --copy-files",
-    "cypress": "cypress open"
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "extends": [
+          "plugin:cypress/recommended"
+        ],
+        "files": [
+          "cypress/**/*.js"
+        ]
+      }
     ]
   },
   "browserslist": {
