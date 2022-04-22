@@ -49,6 +49,12 @@ function App() {
 | setValue    | (newValue) => void | false    | Callback to set the value                                                  |
 | className   | String             | true     | Class name to style the input                                              |
 
+## Customization
+
+If you think this is what you need but you want some customization, feel free to copy the code directly from this link :).
+
+https://github.com/anduscheung/react-autosuggest-inside-input/blob/main/src/components/AutoSuggestInsideInput.tsx.
+
 ## License
 
 [MIT](http://moroshko.mit-license.org)
