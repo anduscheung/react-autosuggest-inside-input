@@ -37,6 +37,7 @@ import AutoSuggestInsideInput from "react-autosuggest-inside-input";
 import { useState } from "react";
 
 const suggestions = ["www.google.com", "www.github.com", "www.npmjs.com"];
+
 function App() {
   const [value, setValue] = useState("");
   return (

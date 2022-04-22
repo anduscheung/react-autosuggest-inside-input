@@ -12,10 +12,6 @@ const suggestions = [
 function App() {
   const [value, setValue] = useState("");
 
-  useCallback((newValue) => {
-    setValue(newValue);
-  }, []);
-
   return (
     <div className="container">
       <AutoSuggestInsideInput
