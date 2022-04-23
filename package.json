@@ -13,6 +13,25 @@
     "dist",
     "README.md"
   ],
+  "keywords": [
+    "autosuggest",
+    "autocomplete",
+    "auto-suggest",
+    "auto-complete",
+    "auto suggest",
+    "auto complete",
+    "react autosuggest",
+    "react autocomplete",
+    "react auto-suggest",
+    "react auto-complete",
+    "react auto suggest",
+    "react auto complete",
+    "react-autosuggest",
+    "react-autocomplete",
+    "react-auto-suggest",
+    "react-auto-complete",
+    "react-component"
+  ],
   "types": "dist/AutoSuggestInsideInput.d.ts",
   "peerDependencies": {
     "react": "^16.8.0",
@@ -47,21 +66,5 @@
     "build": "tsc",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ],
-    "overrides": [
-      {
-        "extends": [
-          "plugin:cypress/recommended"
-        ],
-        "files": [
-          "cypress/**/*.js"
-        ]
-      }
-    ]
   }
 }
