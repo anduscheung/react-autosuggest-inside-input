@@ -6,7 +6,7 @@
     "url": "https://github.com/anduscheung/react-autosuggest-inside-input/issues"
   },
   "license": "MIT",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/AutoSuggestInsideInput.js",
   "module": "dist/AutoSuggestInsideInput.js",
   "files": [
@@ -14,6 +14,9 @@
     "README.md"
   ],
   "keywords": [
+    "react",
+    "react input",
+    "input",
     "autosuggest",
     "autocomplete",
     "auto-suggest",

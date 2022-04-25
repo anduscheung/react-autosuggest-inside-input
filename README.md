@@ -1,6 +1,6 @@
 # React Autosuggest Inside Input
 
-This is a React project that provide autosuggest feature inside an input component like below.
+This package is a simple React component that provide autosuggest feature inside an input like below. It is inspired by the browser's address bar.
 
 ![Demo](https://github.com/anduscheung/react-autosuggest-inside-input/blob/main/src/assets/demo.gif)
 
