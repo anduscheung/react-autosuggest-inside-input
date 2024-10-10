@@ -1,4 +1,4 @@
-# React Autosuggest Inside Input
+# React Autosuggest Inside Input (Outdated)
 
 This package is a simple React component that provide autosuggest feature inside an input like below. It is inspired by the browser's address bar.
 
